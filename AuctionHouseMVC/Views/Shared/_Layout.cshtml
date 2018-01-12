@@ -1,0 +1,103 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    
+    <link href="~/Content/jsTree/themes/default/style.min.css" rel="stylesheet" />
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    @model IEnumerable<AuctionHouseMVC.Models.Category>
+    @using System.Web.UI.WebControls
+    @using AuctionHouseMVC.Models;
+    <div class="MainScreen">
+        <div class="left_bar">
+            <div id="jstree">
+                @(Html.CategoryTree(Model)
+                          .EmptyContent("root")
+                          .Children(m => m.Childs)
+                          .HtmlAttributes(new { id = "tree" })
+                          .ChildrenHtmlAttributes(new { @class = "subItem" })
+                          .ItemText(m => m.Name)
+                          .ItemTemplate(
+        @<text>
+            <a href="@item.Description" desc="@item.Description">@item.Name</a>
+        </text>)
+                )
+            </div>
+        </div>
+
+
+   
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+    </div>
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/jsTree3/jstree.min.js")
+    
+    <script>
+        $(function () {
+            var selectedData;
+            $('#jstree').jstree({
+                "core": {
+                    "multiple": true,
+                    "check_callback": false,
+                    'themes': {
+                        "responsive": true,
+                        'variant': 'larg',
+                        'stripes': false,
+                        'dots': false
+                    }
+                },
+                "types": {
+                    "default": {
+                        "icon": "fa fa-folder icon-state-warning icon-lg"
+                    },
+                    "file": {
+                        "icon": "fa fa-file icon-state-warning icon-lg"
+                    }
+                },
+                "plugins": ["dnd", "state", "types", "sort", "checkbox"]
+            });
+        });
+    </script>
+    
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>
