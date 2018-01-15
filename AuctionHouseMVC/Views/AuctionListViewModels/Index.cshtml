@@ -1,0 +1,26 @@
+﻿@using AuctionHouseMVC.Models;
+
+@model MainViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table>
+    @{
+        List<AuctionListViewModels> list = ;
+        foreach (List<AuctionListViewModels> item in list)
+        {
+
+            <tr>
+                <td>
+                    @Html.Label(item.StartPrice);
+                </td>
+
+                <td>
+                    @Html.Label(item.Title);
+                </td>
+            </tr>
+        }
+    }
+</table>

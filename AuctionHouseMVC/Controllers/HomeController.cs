@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AuctionHouseMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,14 @@ namespace AuctionHouseMVC.Controllers
 {
     public class HomeController : Controller
     {
+        
+
         public ActionResult Index()
         {
             var db = new context();
-            return View(db.Categories.Where(x => x.ID.Length > 0).ToList());
+            var val = db.Categories.Where(x => x.ID.Length > 0).ToList();
+            MainViewModel finalModel = new MainViewModel(null, val);
+            return View(finalModel);
         }
 
         public ActionResult About()
@@ -31,7 +36,9 @@ namespace AuctionHouseMVC.Controllers
         public ActionResult TreeView()
         {
             var db = new context();
-            return View(db.Categories.Where(x=>x.ID.Length > 0).ToList());
+            var val = db.Categories.Where(x => x.ID.Length > 0).ToList();
+            MainViewModel finalModel = new MainViewModel(null, val);
+            return View(finalModel);
         }
     }
 }

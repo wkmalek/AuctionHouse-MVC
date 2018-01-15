@@ -18,7 +18,11 @@ namespace AuctionHouseMVC.Controllers
         // GET: AuctionPageViewModels
         public ActionResult Index()
         {
-            return View(db.auctions.Where(x => x.Id == "0").FirstOrDefault());
+            db = new AuctionPageContext();
+            var it = db.auctions.auctions.Where(x => x.Id == "CCBC1D96-F3D7-4465-9AD3-5F05055C069C").FirstOrDefault();
+            var vm = new AuctionPageViewModel(it);
+
+            return View(vm);
         }
 
         //// GET: AuctionPageViewModels/Details/5

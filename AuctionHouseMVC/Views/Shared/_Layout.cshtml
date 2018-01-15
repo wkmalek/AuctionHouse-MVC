@@ -1,4 +1,6 @@
-﻿
+﻿@using System.Web.UI.WebControls
+@using AuctionHouseMVC.Models;
+@model MainViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,31 +34,18 @@
             </div>
         </div>
     </div>
-    @model IEnumerable<AuctionHouseMVC.Models.Category>
-    @using System.Web.UI.WebControls
-    @using AuctionHouseMVC.Models;
+    
     <div class="MainScreen">
-        <div class="left_bar">
-            <div id="jstree">
-                @(Html.CategoryTree(Model)
-                          .EmptyContent("root")
-                          .Children(m => m.Childs)
-                          .HtmlAttributes(new { id = "tree" })
-                          .ChildrenHtmlAttributes(new { @class = "subItem" })
-                          .ItemText(m => m.Name)
-                          .ItemTemplate(
-        @<text>
-            <a href="@item.Description" desc="@item.Description">@item.Name</a>
-        </text>)
-                )
-            </div>
-        </div>
-
+        
+       
+       @Html.Partial("Tree")
 
    
 
         <div class="container body-content">
+            
             @RenderBody()
+           
             <hr />
             <footer>
                 <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>

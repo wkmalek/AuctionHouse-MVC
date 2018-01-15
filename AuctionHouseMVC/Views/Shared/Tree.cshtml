@@ -1,0 +1,19 @@
+﻿@model MainViewModel
+@using System.Web.UI.WebControls
+@using AuctionHouseMVC.Models;
+
+<div class="left_bar">
+    <div id="jstree">
+        @(Html.CategoryTree(Model.cat)
+                          .EmptyContent("root")
+                          .Children(m => m.Childs)
+                          .HtmlAttributes(new { id = "tree" })
+                          .ChildrenHtmlAttributes(new { @class = "subItem" })
+                          .ItemText(m => m.Name)
+                          .ItemTemplate(
+                @<text>
+                    <a href="@item.Description" desc="@item.Description">@item.Name</a>
+                </text>)
+        )
+    </div>
+</div>
