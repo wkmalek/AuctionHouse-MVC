@@ -11,6 +11,7 @@ namespace AuctionHouseMVC.Enums
         byUserId,
         bySelectedCategory,
         bySelectedCategoriesWithChildrens,
+        byAuctionId,
     }
 
     public enum paramTypeForAuctionList

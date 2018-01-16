@@ -1,1 +1,96 @@
-﻿
+﻿@using AuctionHouseMVC.Models;
+@Styles.Render("~/Content/AuctionDetails.css")
+@model ModelContainer
+@*@{
+        ViewBag.Title = "Index";
+    }*@
+
+@{
+            var AuctionPageViewModel = Model.GetModel<AuctionPageViewModel>();
+
+<div class="MainContainer">
+    <div class="UpperInfo">
+        <div class="Title">
+            @*AuctionTitle*@
+            @Html.Label(AuctionPageViewModel.AuctionTitle)
+        </div>
+        <div class="PhotoAndRightBar">
+            <div class="Photo">
+
+            </div>
+            <div class="BasicInfo">
+                <div class="Price">
+                    @*Price label
+                    Price*@
+                    @Html.Label(AuctionPageViewModel.ActualPrice)
+                    @*Currency*@
+                    @Html.Label(AuctionPageViewModel.Currency)
+                </div>
+
+                <div class="Creator">
+                    <div class="CreatorName">
+                        @*CreatorNameLabel
+                        CreatorName*@
+                        @Html.Label(AuctionPageViewModel.CreatorName)
+                    </div>
+
+                </div>
+
+                <div class="Description">
+                    @*ShortDescription*@
+                    @Html.Label(AuctionPageViewModel.ShortDescription)
+                </div>
+
+                <div class="DateCreated">
+                    @*AuctionCreatedLabel*@
+                    @Html.Label(AuctionPageViewModel.DateCreated)
+                    @*Auction Created*@
+                </div>
+
+                <div class="DateExpires">
+                    @*AuctionExpires*@
+                    @Html.Label(AuctionPageViewModel.DateEnd)
+                    @*AuctionExpiresLabel*@
+                </div>
+
+                <div class="BidButtonContainer">
+                    @*BidButton*@
+                    <button type="button" onclick="location.href='@Url.Action("Bid","Bid", new { id = AuctionPageViewModel.Id} )'"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="MiddleInfo">
+        <div class="AuctionText">
+            
+            @*AuctionLongDescription*@
+                @Html.Label(AuctionPageViewModel.LongDescription)
+           
+        </div>
+    </div>
+    <div class="LowerInfo">
+        <div class="Bidders">
+
+        </div>
+    </div>
+</div>
+
+
+
+      
+
+
+                
+
+                
+
+                
+
+                
+
+                
+
+
+
+        }
+

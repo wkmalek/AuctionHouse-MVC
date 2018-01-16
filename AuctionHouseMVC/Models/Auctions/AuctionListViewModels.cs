@@ -6,15 +6,16 @@ using System.Web;
 
 namespace AuctionHouseMVC.Models
 {
-    public class AuctionListViewModels : IModel
+    public class AuctionListViewModels
     {
         private Auctions auction;
         [Key]
         public string Title { get; set; }
-        public string StartPrice { get; set; }
+        public string EndingPrice { get; set; }
         public string DateCreated { get; set; }
-        public string DataExpires { get; set; }
+        public string DateExpires { get; set; }
         public string Description { get; set; }
+        public string Id { get; set; }
 
         public AuctionListViewModels(Auctions item)
         {
@@ -25,17 +26,18 @@ namespace AuctionHouseMVC.Models
         private void UpdateProperties()
         {
             Title = auction.Title;
-            StartPrice = auction.StartPrice.ToString();
+            EndingPrice = auction.EndingPrice.ToString();
             if(auction.DateCreated != null) { 
             var dttemp = auction.DateCreated.Value.AddDays(auction.ExpiresIn);
-            DataExpires = dttemp.ToString();
+            DateExpires = dttemp.ToString();
             }
             else
             {
-                DataExpires = "";
+                DateExpires = "";
             }
             DateCreated = auction.DateCreated.ToString();
             Description = auction.ShortDescription;
+            Id = auction.Id;
         }
     }
 }

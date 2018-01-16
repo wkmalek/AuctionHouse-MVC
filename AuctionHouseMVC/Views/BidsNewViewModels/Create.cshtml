@@ -1,0 +1,23 @@
+﻿@using AuctionHouseMVC.Models;
+@Styles.Render("~/Content/CreateBid.css")
+@model ModelContainer
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+<fieldset>
+    <legend>New Bid</legend>
+    @using (Ajax.BeginForm("Create" , "BidsNewViewModels", new AjaxOptions { UpdateTargetId = "divInterestDetails" }))
+    {
+        <div id="divInterestDetails"></div>
+        <ol>
+            <li>
+                @Html.TextBox("value")
+            </li>
+        </ol>
+        <button>PassBid</button>
+    }
+</fieldset> 

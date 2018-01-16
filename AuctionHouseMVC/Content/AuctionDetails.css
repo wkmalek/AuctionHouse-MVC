@@ -1,0 +1,129 @@
+﻿body {
+}
+.UpperInfo{
+    height: auto;
+    width:100%;
+    border-bottom:1px solid;
+}
+
+.PhotoAndRightBar{
+    height:300px;
+    width:100%;
+}
+
+.Photo{
+    height: 100%;
+    width:60%;
+    float:left;
+    border-right:1px solid;
+}
+
+.BasicInfo{
+    height: 100%;
+    width:40%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.MiddleInfo{
+    height: auto;
+    width: 100%;
+    border-bottom:1px solid;
+}
+
+.LowerInfo{
+    height:auto;
+    width:100%;
+}
+
+.Title{
+    height: 100px;
+    width: 100%;
+    margin:auto;
+    padding:10px;
+    display: flex;
+justify-content: center; /* align horizontal */
+align-items: center; /* align vertical */
+   border-bottom:1px solid;
+}
+
+.MainCreateAuction{
+    height: auto;
+    width:100%;
+}
+
+.upperBar{
+    height: 100px;
+    width:100%;
+    
+    
+     
+}
+.middle{
+    
+    width:100%;
+    height:auto;
+    padding: 2%;
+    
+   
+  
+}
+.downBar{
+    
+    width:100%;
+    padding: 2%;
+    
+    
+ 
+}
+
+.AuctionText{
+    min-height: 300px;
+    min-width: 100%;
+    resize: none;
+
+}
+
+.AuctionCreateTitleDiv{
+    height: 100px;
+    width: 100%;
+    margin:auto;
+    padding:10px;
+    display: flex;
+justify-content: center; /* align horizontal */
+align-items: center; /* align vertical */
+   border:3px solid;
+}
+
+.LeftMiddleBar{
+    height: 100%;
+    width:65%;
+    
+
+    float:left;
+    border:3px solid;
+    
+}
+
+.RightMiddleBar{
+    height: 100%;
+    width:30%;
+
+    float:right;
+    border:3px solid;
+}
+
+.BidButtonContainer{
+    float:left;
+    position:relative;
+    left:20%;
+    bottom:10%;
+    margin-top: auto;
+}
+.BidButton{
+    min-width:200px;
+    min-height:50px;
+    width:70%;
+}

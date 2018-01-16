@@ -6,7 +6,7 @@ using System.Web;
 
 namespace AuctionHouseMVC.Models
 {
-    public class AuctionPageContext : DbContext
+    public class AuctionPageContext
     {
         public AuctionContext auctions { get; set; }
         //public DbSet<Categories> categories { get; set; }

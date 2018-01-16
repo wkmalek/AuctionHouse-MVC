@@ -1,0 +1,44 @@
+﻿#AuctionList-MainBody{
+    width:auto;
+    height:100%;
+}
+
+#AuctionList-MainTitle{
+
+}
+
+#AuctionList-Table{
+   
+}
+
+.AuctionList-Element{
+    width:100%;
+    border:1px solid;
+}
+
+.AuctionList-Image{
+    float:left;
+    padding: 5px;
+}
+
+.AuctionList-ElementTitle{
+    float:left;
+    padding: 5px;
+}
+.AuctionList-EndingPrice{
+    float:left;
+    padding: 5px;
+}
+
+.AuctionList-DataCreated{
+    float:left;
+    padding: 5px;
+}
+.AuctionList-DataExpires{
+    float:left;
+    padding: 5px;
+}
+.AuctionList-Description{
+    float:left;
+    padding: 5px;
+}

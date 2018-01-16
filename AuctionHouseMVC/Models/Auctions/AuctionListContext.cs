@@ -8,7 +8,7 @@ using System.Web;
 
 namespace AuctionHouseMVC.Models
 {
-    public class AuctionListContext 
+    public class AuctionListContext : DbContext
     {
         public AuctionContext auctions { get; set; }
         public CategoriesContext categories { get; set; }

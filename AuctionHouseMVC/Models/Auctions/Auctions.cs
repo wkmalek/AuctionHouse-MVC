@@ -9,9 +9,9 @@ namespace AuctionHouseMVC
     using System.Data.Entity.Spatial;
     using Enums;
 
-    public partial class Auctions : DbContext
+    public partial class Auctions
     {
-        AuctionPageViewModel vm;
+        
 
         public string Id { get; set; }
 
@@ -26,6 +26,8 @@ namespace AuctionHouseMVC
         public decimal? EndingPrice { get; set; }
 
         public DateTime? DateCreated { get; set; }
+
+        public string Currency { get; set; }
 
         public int ExpiresIn { get; set; }
 

@@ -15,7 +15,8 @@ namespace AuctionHouseMVC.Controllers
         {
             var db = new context();
             var val = db.Categories.Where(x => x.ID.Length > 0).ToList();
-            MainViewModel finalModel = new MainViewModel(null, val);
+            ModelContainer finalModel = new ModelContainer();
+            finalModel.cat = val;
             return View(finalModel);
         }
 
@@ -37,7 +38,8 @@ namespace AuctionHouseMVC.Controllers
         {
             var db = new context();
             var val = db.Categories.Where(x => x.ID.Length > 0).ToList();
-            MainViewModel finalModel = new MainViewModel(null, val);
+            ModelContainer finalModel = new ModelContainer();
+            finalModel.cat = val;
             return View(finalModel);
         }
     }

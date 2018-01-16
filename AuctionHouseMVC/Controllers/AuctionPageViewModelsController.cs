@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AuctionHouseMVC.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AuctionHouseMVC.Controllers
 {
@@ -16,115 +17,63 @@ namespace AuctionHouseMVC.Controllers
         public AuctionPageContext db = new AuctionPageContext();
 
         // GET: AuctionPageViewModels
-        public ActionResult Index()
-        {
-            db = new AuctionPageContext();
-            var it = db.auctions.auctions.Where(x => x.Id == "CCBC1D96-F3D7-4465-9AD3-5F05055C069C").FirstOrDefault();
-            var vm = new AuctionPageViewModel(it);
-
-            return View(vm);
+        public ActionResult Index(string id)
+        {   
+                //db = new AuctionPageContext();
+                var it = db.auctions.auctions.Where(x => x.Id == id).FirstOrDefault();
+                var vm = new AuctionPageViewModel(it);
+                ModelContainer cont = new ModelContainer();
+                cont.AddModel(vm);
+                return View(cont); 
         }
 
-        //// GET: AuctionPageViewModels/Details/5
-        //public ActionResult Details(string id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    AuctionPageViewModel auctionPageViewModel = db.AuctionPageViewModels.Find(id);
-        //    if (auctionPageViewModel == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(auctionPageViewModel);
-        //}
+        // GET: BidsNewViewModels/Create
+        public ActionResult Create()
+        {
+            Auctions auction = new Auctions();
+            ModelContainer cont = new ModelContainer();
+            cont.AddModel(auction);
 
-        //// GET: AuctionPageViewModels/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
+            return View(cont);
+        }
 
-        //// POST: AuctionPageViewModels/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "AuctionTitle,ActualPrice,StartingPrice,Currency,CreatorName,CreatorId,ShortDescription,LongDescription,DateCreated,DateEnd")] AuctionPageViewModel auctionPageViewModel)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.AuctionPageViewModels.Add(auctionPageViewModel);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
+        // POST: BidsNewViewModels/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        public ActionResult Create([Bind(Include = "AuctionTitle, PriceStart, DescriptionShort, DescriptionLong")] CreateAuctionViewModel auc)
+        {
+            if (ModelState.IsValid)
+            {
+                Auctions auction = new Auctions()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    CategoryId = "1",
+                    Title = auc.AuctionTitle,
+                    StartPrice = auc.PriceStart,
+                    Currency = "USD",
+                    CreatorId = User.Identity.GetUserId(),
+                    ShortDescription = auc.DescriptionShort,
+                    LongDescription = auc.DescriptionLong,
+                    DateCreated = DateTime.Now,
+                    //ExpiresIn = (int)auc.ExpiresIn.,
+                    
+                };
 
-        //    return View(auctionPageViewModel);
-        //}
+                db.auctions.auctions.Add(auction);
 
-        //// GET: AuctionPageViewModels/Edit/5
-        //public ActionResult Edit(string id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    AuctionPageViewModel auctionPageViewModel = db.AuctionPageViewModels.Find(id);
-        //    if (auctionPageViewModel == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(auctionPageViewModel);
-        //}
+                db.auctions.SaveChanges();
+                return Redirect("~/AuctionPageViewModels/Index/" + auction.Id);
+            }
 
-        //// POST: AuctionPageViewModels/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "AuctionTitle,ActualPrice,StartingPrice,Currency,CreatorName,CreatorId,ShortDescription,LongDescription,DateCreated,DateEnd")] AuctionPageViewModel auctionPageViewModel)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(auctionPageViewModel).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(auctionPageViewModel);
-        //}
-
-        //// GET: AuctionPageViewModels/Delete/5
-        //public ActionResult Delete(string id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    AuctionPageViewModel auctionPageViewModel = db.AuctionPageViewModels.Find(id);
-        //    if (auctionPageViewModel == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(auctionPageViewModel);
-        //}
-
-        //// POST: AuctionPageViewModels/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(string id)
-        //{
-        //    AuctionPageViewModel auctionPageViewModel = db.AuctionPageViewModels.Find(id);
-        //    db.AuctionPageViewModels.Remove(auctionPageViewModel);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+            return Redirect("/");
+        }
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                db.Dispose();
+                db.auctions.Dispose();
             }
             base.Dispose(disposing);
         }

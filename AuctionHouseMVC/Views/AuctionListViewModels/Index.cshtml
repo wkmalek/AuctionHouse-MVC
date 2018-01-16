@@ -1,26 +1,38 @@
 ﻿@using AuctionHouseMVC.Models;
-
-@model MainViewModel
-@{
+@Styles.Render("~/Content/AuctionOnList.css")
+@model ModelContainer
+@*@{
     ViewBag.Title = "Index";
-}
+}*@
+<div id="AuctionList-MainBody">
+    <div id="AuctionList-MainTitle">
+        <h2>Index</h2>
+    </div>
+    <div id="AuctionList-Table">
+        
+            @{
+                var list = Model.GetModel<List<AuctionListViewModels>>();
+                foreach (AuctionListViewModels item in list)
+                {
+                    <div class="AuctionList-Element">
+                        <div class="AuctionList-Image"><a href="@Url.Action("Index", "AuctionPageViewModels", new { id = item.Id})"> @Html.Label("Image")</a></div>
+                                                      
 
-<h2>Index</h2>
-<table>
-    @{
-        List<AuctionListViewModels> list = ;
-        foreach (List<AuctionListViewModels> item in list)
-        {
+                        <div class="AuctionList-ElementTitle">@Html.Label(item.Title)</div>
+                        
+                        <div class="AuctionList-EndingPrice">@Html.Label(item.EndingPrice)</div>
+                        
+                        <div class="AuctionList-DataCreated">@Html.Label(item.DateCreated)</div>
+                        
+                        <div class="AuctionList-DataExpires">@Html.Label(item.DateExpires)</div>
+                        
+                        <div class="AuctionList-Description">@Html.Label(item.Description)</div>
+                        
+                    </div>
+                }
+            }
+        
+    </div>
+</div>
 
-            <tr>
-                <td>
-                    @Html.Label(item.StartPrice);
-                </td>
 
-                <td>
-                    @Html.Label(item.Title);
-                </td>
-            </tr>
-        }
-    }
-</table>

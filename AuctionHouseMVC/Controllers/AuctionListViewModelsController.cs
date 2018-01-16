@@ -22,10 +22,10 @@ namespace AuctionHouseMVC.Controllers
                 id = "1",
             };
             db = new AuctionListContext(sp, Enums.paramTypeForAuctionList.byCategories);
-            var output = db.AuctionListView;
-            List<Object> objList = new List<Object>(output);
-            var content = new MainViewModel(objList, null);
-            return View(content);
+            var AuctionList = db.AuctionListView;
+            ModelContainer cont = new ModelContainer();
+            cont.AddModel(AuctionList);
+            return View(cont);
         }
 
         // GET: AuctionListViewModels/Details/5

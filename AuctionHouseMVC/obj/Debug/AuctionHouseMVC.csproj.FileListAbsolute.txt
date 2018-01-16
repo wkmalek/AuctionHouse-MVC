@@ -69,6 +69,8 @@ c:\users\administrator\documents\visual studio 2015\Projects\AuctionHouseMVC\Auc
 c:\users\administrator\documents\visual studio 2015\Projects\AuctionHouseMVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.pdb
 c:\users\administrator\documents\visual studio 2015\Projects\AuctionHouseMVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.Migrations.init.resources
 c:\users\administrator\documents\visual studio 2015\Projects\AuctionHouseMVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.Migrations.init.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\bin\roslyn\csc.exe
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -135,8 +137,5 @@ C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\Au
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.Migrations.init.resources
-C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.dll
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.pdb
-C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\AuctionHouseMVC\obj\Debug\AuctionHouseMVC.csprojResolveAssemblyReference.cache

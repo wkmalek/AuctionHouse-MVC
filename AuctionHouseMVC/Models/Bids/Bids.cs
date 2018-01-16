@@ -4,9 +4,10 @@ namespace AuctionHouseMVC.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
 
-    public partial class Bids
+    public partial class Bids 
     {
         public string Id { get; set; }
 
@@ -17,5 +18,7 @@ namespace AuctionHouseMVC.Models
 
         [StringLength(128)]
         public string AuctionId { get; set; }
+
+        public DateTime BidDate { get; set; }
     }
 }

@@ -169,16 +169,22 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\Images\ImgHelper.cs" />
     <Compile Include="Controllers\AuctionListViewModelsController.cs" />
     <Compile Include="Controllers\AuctionPageViewModelsController.cs" />
+    <Compile Include="Controllers\BidsListModelModelsController.cs" />
+    <Compile Include="Controllers\BidsNewViewModelsController.cs" />
     <Compile Include="Enums\paramType.cs" />
-    <Compile Include="Interfaces\IDecorate.cs" />
+    <Compile Include="ExtMethods\DbHelper.cs" />
+    <Compile Include="Interfaces\IDbHelper.cs" />
     <Compile Include="Models\Auctions\AuctionContext.cs" />
     <Compile Include="Models\Auctions\AuctionListContext.cs" />
     <Compile Include="Models\Auctions\AuctionListViewModels.cs" />
     <Compile Include="Models\Auctions\AuctionPageViewModel.cs" />
     <Compile Include="Models\Auctions\Auctions.cs" />
+    <Compile Include="Models\Auctions\CreateAuctionViewModel.cs" />
     <Compile Include="Models\Bids\Bids.cs" />
+    <Compile Include="Models\Bids\BidsContext.cs" />
     <Compile Include="Models\Bids\BidsViewModel.cs" />
     <Compile Include="Models\Categories\Categories.cs" />
     <Compile Include="context.cs" />
@@ -199,17 +205,18 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Auctions\AuctionPageContext.cs" />
     <Compile Include="Models\Categories\Category.cs" />
-    <Compile Include="Models\IModel.cs" />
-    <Compile Include="Models\jsTreeNode\CategoryTree.cs" />
+    <Compile Include="Models\CategoryTree.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\jsTreeNode\jsTree3Node.cs" />
-    <Compile Include="Models\MainViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Enums\SortBy.cs" />
+    <Compile Include="Models\ModelContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AuctionDetails.css" />
+    <Content Include="Content\AuctionOnList.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jsTree\docs.css" />
@@ -283,12 +290,15 @@
     <Content Include="Views\jsTree3\AJAXDemo.cshtml" />
     <Content Include="Views\Home\TreeView.cshtml" />
     <Content Include="Views\AuctionPageViewModels\Create.cshtml" />
-    <Content Include="Views\AuctionPageViewModels\Delete.cshtml" />
-    <Content Include="Views\AuctionPageViewModels\Details.cshtml" />
-    <Content Include="Views\AuctionPageViewModels\Edit.cshtml" />
     <Content Include="Views\AuctionPageViewModels\Index.cshtml" />
     <Content Include="Views\AuctionListViewModels\Index.cshtml" />
-    <Content Include="Views\Shared\Tree.cshtml" />
+    <Content Include="Views\BidsListModelModels\Create.cshtml" />
+    <Content Include="Views\BidsListModelModels\Delete.cshtml" />
+    <Content Include="Views\BidsListModelModels\Details.cshtml" />
+    <Content Include="Views\BidsListModelModels\Edit.cshtml" />
+    <Content Include="Views\BidsListModelModels\Index.cshtml" />
+    <Content Include="Views\BidsNewViewModels\Create.cshtml" />
+    <Content Include="Views\BidsNewViewModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
