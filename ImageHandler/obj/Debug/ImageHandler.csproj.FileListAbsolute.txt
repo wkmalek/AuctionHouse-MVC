@@ -1,0 +1,5 @@
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\ImageHandler\bin\Debug\ImageHandler.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\ImageHandler\bin\Debug\ImageHandler.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\ImageHandler\obj\Debug\ImageHandler.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\ImageHandler\obj\Debug\ImageHandler.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\AuctionHouse MVC\ImageHandler\obj\Debug\ImageHandler.pdb
